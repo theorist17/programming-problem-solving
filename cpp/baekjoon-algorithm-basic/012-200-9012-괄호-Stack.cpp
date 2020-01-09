@@ -3,11 +3,10 @@
 #include<stack>
 using namespace std;
 
-int main()
+int main(int argc, int** argv)
 {
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
-
 
 	int T;
 	cin >> T;
