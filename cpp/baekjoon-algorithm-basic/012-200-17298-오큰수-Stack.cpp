@@ -10,13 +10,15 @@ int main()
 
     stack<int> s;
 
-    int N;
-    cin >> N;
+    int n;
+    cin >> n;
 
-    vector<int> A(N);
+    vector<int> A(n);
     cin >> A[0];
+
     s.push(0);
-    for(int i = 1 ; i < N ;i++) 
+
+    for(int i = 1 ; i < n ;i++) 
     {
         cin >> A[i];
 
@@ -27,14 +29,17 @@ int main()
         }
         s.push(i);
     }
+
     while(!s.empty())
     {
         A[s.top()] = -1;
         s.pop();
     }
-    for(int i = 0 ; i < N - 1; i++){
+
+    for(int i = 0 ; i < n - 1; i++){
         cout << A[i] << ' ';
     }
-    cout << A[N-1] << '\n';
+    cout << A[n-1] << '\n';
+    
 	return 0;
 }
