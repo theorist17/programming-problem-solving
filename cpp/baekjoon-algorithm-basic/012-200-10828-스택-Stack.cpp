@@ -4,8 +4,8 @@ using namespace std;
 
 class Stack
 {
+private:
 	int A[10000], m;
-
 public:
 	Stack() { m = 0; }
 	void push(int n){
