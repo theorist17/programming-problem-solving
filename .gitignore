@@ -6,3 +6,6 @@
 
 # Unignore all dirs
 !*/
+
+# Ignore platform specific files
+.vscode/settings.json
