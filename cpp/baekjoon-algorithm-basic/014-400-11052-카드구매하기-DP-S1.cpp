@@ -22,9 +22,9 @@ int main()
                 M = m;
         }
         D[i] = max(M, P[i]);
-        cout << D[i] << '\n';
     }
 
+    cout << D[n] << '\n';
 
 	return 0;
 }
