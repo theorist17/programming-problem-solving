@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-
+# https://www.acmicpc.net/source/share/454e58d9e21a4042ba74ec9af82c13a4
 
 int main()
 {
