@@ -2,6 +2,8 @@
 #include<vector>
 using namespace std;
 
+# https://www.acmicpc.net/source/share/f1f0f435bcf14e2b8c9d8d6d576eb496
+
 int main()
 {
     int n, k;
@@ -18,6 +20,6 @@ int main()
             D[i][j] = (D[i-1][j] + D[i][j-1]) % 1000000000;
     
     cout << D[n][k] << '\n';
-
+    
 	return 0;
 }
