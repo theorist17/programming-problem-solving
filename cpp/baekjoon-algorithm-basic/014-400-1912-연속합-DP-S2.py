@@ -1,7 +1,7 @@
-#from collections import deque; tempcmd = deque(input().replace(' ', '\n').split('\n'));input = tempcmd.popleft
+import sys
 
-n = int(input())
-temp = map(int, input().split())
+n = int(sys.stdin.readline())
+temp = map(int, sys.stdin.readline().split())
 
 arr = [0]
 for t in temp:
@@ -11,5 +11,5 @@ dp = [-1000] * (n + 1)
 dp[n] = arr[n]
 for i in reversed(range(1, n)):
     dp[i] = max(arr[i], dp[i+1]+arr[i])
-
+print(dp)
 print(max(dp))
