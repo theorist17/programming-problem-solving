@@ -24,9 +24,7 @@ int main()
                 D[i] = D[j*j] + D[i - j*j];
             else 
                 D[i] = min(D[i], D[j*j] + D[i - j*j]);
-            //cout << "i:" << i << " j:" << j << " " << D[i] << '\n';
         }
-        //cout << D[i] << '\n';
     }
          
     cout << D[n] << '\n';
