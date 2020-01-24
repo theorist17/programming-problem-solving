@@ -7,8 +7,8 @@ int main()
     int n, k;
     cin >> n >> k;
 
-    //vector<vector<int> > D(n+1, vector<int>(n+1));
-    int D[201][201];
+    vector<vector<int> > D(n+1, vector<int>(k+1));
+    
     for (int i = 1 ; i <= n ; i++)
         D[i][1] = 1;
     for (int j = 1 ; j <= k ; j++)
