@@ -1,14 +1,26 @@
 
 n = int(input())
-if n % 2:
-    print(0)
+
+arr = [[0] * 3 for _ in range(n)]
+for i in range(n):
+    arr[i] = list(map(int, input().split()))
+
+if n == 1:
+    print(min(arr[0]))
 else:
-    dp = [0] * (n+1)
-    dp[0] = 1
-    dp[2] = 3
-    for i in range(4, n+1, 2):
-        dp[i] += dp[i-2] * 3
-        for j in range(4, i+1, 2):
-            dp[i] += dp[i-j] * 2
+    minv = []
+    for head in range(3):
+        dp = [[1000] * 3 for _ in range(n)]
+        dp[0][head] = arr[0][head]
+
+        for i in range(1, n):
+            for j in range(3):
+                dp[i][j] = arr[i][j] + min(dp[i-1][(j+1)%3], dp[i-1][(j+2)%3])
+        
+        candidate = []
+        for j in range(3):
+            if j != head:
+                candidate.append(dp[n-1][j])
+        minv.append(min(candidate))
         #print(dp)
-    print(dp[n])
+    print(min(minv))
