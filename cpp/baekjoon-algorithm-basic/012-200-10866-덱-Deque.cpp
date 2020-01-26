@@ -2,6 +2,7 @@
 #include<string>
 using namespace std;
 
+//#define N 10000
 const int N = 1e5;
 
 class Deque
