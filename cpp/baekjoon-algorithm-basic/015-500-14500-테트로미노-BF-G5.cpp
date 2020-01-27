@@ -90,7 +90,6 @@ int main()
     int maxv = 0;
     for (int k = 0 ; k < tetromino.size(); k++)
     {
-        //cout << k << "!!" << "\n";
         for (int i = 0 ; i < n - tetromino[k].size() + 1; i++)
         {
             for (int j = 0 ; j < m - tetromino[k][0].size() + 1 ; j++)
@@ -109,9 +108,7 @@ int main()
                     //cout << i << " " << j << " " << k << "\n";
                     maxv = s;
                 }
-                //cout  << s << " ";
             }
-            //cout << "\n";
         }
         
     }
