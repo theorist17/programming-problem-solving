@@ -1,10 +1,8 @@
 #include<iostream>
-#include<vector>
 using namespace std;
 
 int n;
 char arr[50][50];
-
 
 void swap(int r, int c, int y, int x)
 {
