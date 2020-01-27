@@ -22,7 +22,7 @@ int main()
     }
 
     int a = n - pow(10, m - 1) + 1;
-    //cout << a << " ";
+    
     ans += a * m;
 
     cout << ans << "\n";
