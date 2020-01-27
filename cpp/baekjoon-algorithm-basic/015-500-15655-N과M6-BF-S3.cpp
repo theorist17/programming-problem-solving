@@ -16,14 +16,11 @@ void pick(vector<int>&arr, int picked, int toPick)
         return;
     }
 
-    for (int i = 1; i <= n; i++)
+    for (int i = picked + 1; i <= n; i++)
     {
-        if(data[picked] <= data[i])
-        {
-            arr.push_back(data[i]);
-            pick(arr, i, toPick - 1);
-            arr.pop_back();
-        }
+        arr.push_back(data[i]);
+        pick(arr, i, toPick - 1);
+        arr.pop_back();
     }
 }
 int main() 
@@ -33,6 +30,7 @@ int main()
     
     cin >> n >> m;
 
+    vector<int> arr;
     data.push_back(-1);
     for (int i = 1 ; i <= n; i++)
     {
@@ -43,7 +41,6 @@ int main()
 
     sort(data.begin(), data.end());
 
-    vector<int> arr;
     pick(arr, 0, m);
 
     return 0;
