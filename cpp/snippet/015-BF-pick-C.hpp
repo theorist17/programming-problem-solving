@@ -2,12 +2,7 @@
 #include<vector>
 using namespace std;
 
-void printVec(const vector<int>& vec )
-{
-    for (int i = 0 ; i < vec.size(); i++) 
-        cout << vec[i] << ' '; 
-    cout << '\n';
-}
+
 
 void pick(vector<int>& arr, vector<int>& ret, int pickedIdx, int toPick)
 {
@@ -22,9 +17,4 @@ void pick(vector<int>& arr, vector<int>& ret, int pickedIdx, int toPick)
         pick(arr, ret, i, toPick - 1);
         ret.pop_back();
     }
-}
-
-int main() 
-{
-
 }
