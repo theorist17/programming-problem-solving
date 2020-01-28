@@ -62,7 +62,7 @@ int addBlock(int length) {
     // base
     if(length == 0){
         if (zeroPoint == make_pair(-1, -1)){
-            //printBoard();
+            printBoard();
             return 1;
         } else {
             return 0;
