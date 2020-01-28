@@ -7,7 +7,7 @@ int n, m;
 vector<int> data;
 int used[9] = {0, };
 
-void pick(vector<int> &picked, int start, int length){
+void pick(vector<int> &picked, int length){
     if (length == 0){
         for(int i = 0 ; i < picked.size(); i++)
             cout << picked[i] << " ";
@@ -15,11 +15,11 @@ void pick(vector<int> &picked, int start, int length){
         return;
     }
 
-    for (int i = start + 1; i <= n; i++){
+    for (int i = 1; i <= n; i++){
         if (!used[i]){
-            used[i] = true; picked.push_back(data[i]);
-            pick(picked, i, length-1);
-            used[i] = false; picked.pop_back();
+            picked.push_back(data[i]);
+            pick(picked, length-1);
+            picked.pop_back();
             while(data[i+1]==data[i]&&i<n)
                 i++;
         }
@@ -42,7 +42,7 @@ int main()
     sort(data.begin(), data.end());
 
     vector<int>picked;
-    pick(picked, 0, m);
+    pick(picked, m);
 
     return 0;
 }
