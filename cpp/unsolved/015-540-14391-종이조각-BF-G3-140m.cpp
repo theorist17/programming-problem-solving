@@ -21,9 +21,7 @@ void cut(int score, int k) {
     }
     
     if (r == -1 && c == -1) {
-        if (ans < score){
-            ans = max(ans, score);            
-        }
+        ans = max(ans, score); 
         return;
     }
 
