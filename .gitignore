@@ -12,3 +12,4 @@
 .DS_Store
 pps.code-workspace
 code-plus/lecture-note/algorithm-basic/*
+.vscode/c_cpp_properties.json
