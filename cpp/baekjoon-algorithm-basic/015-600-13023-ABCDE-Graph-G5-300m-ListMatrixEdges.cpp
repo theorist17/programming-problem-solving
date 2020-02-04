@@ -1,5 +1,4 @@
 #include<iostream>
-#include<queue>
 #include<vector>
 using namespace std;
 
@@ -10,16 +9,16 @@ int main() {
     int n, m;
     cin >> n >> m;
 
-    vector<pair<int, int> > e;
-    bool a[2000][2000] = {false, };
+    vector<pair<int, int> > e(2*m);
+    vector<vector<bool> > a(n, vector<bool>(n, false));
     vector<vector<int> > g(n);
 
     for (int i = 0; i < m; i++) { 
         int here, there;
         cin >> here >> there;
 
-        e.push_back({here, there});
-        e.push_back({there, here});
+        e[2*i] = {here, there};
+        e[2*i+1] = {there, here};
 
         a[here][there] = a[there][here] = true;
 
@@ -39,7 +38,7 @@ int main() {
             if (!a[B][C]) continue;
 
             for (int E : g[D]){
-                if((A==B||B==C||C==D||D==E)) continue;
+                if((A==E||B==E||C==E||D==E)) continue;
                 cout << 1 << '\n';
                 return 0;
             }
