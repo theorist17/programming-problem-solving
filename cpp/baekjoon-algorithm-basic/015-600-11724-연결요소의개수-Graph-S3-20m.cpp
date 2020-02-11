@@ -12,7 +12,7 @@ void dfs(int node) {
     for(int i = 0 ; i < g[node].size(); i++){
         int next = g[node][i];
         if(!check[next])
-            dfs(next);;
+            dfs(next);
     }
 }
 
