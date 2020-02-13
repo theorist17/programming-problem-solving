@@ -13,7 +13,7 @@ void dfs(int node, int set) {
     for(int i = 0 ; i < g[node].size(); i++){
         int next = g[node][i];
         if(check[next] != 0)
-            dfs(next, 3 - set);;
+            dfs(next, 3 - set);
     }
 }
 
