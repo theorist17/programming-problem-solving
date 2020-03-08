@@ -43,13 +43,7 @@ int main() {
     }
 
     dfs(1, -1);
-
-
-    for (int i = 1 ; i <= n ; i++){
-        cout << check[i] << " ";
-    }
-    cout << "\n";
-
+    
     queue<int> q;
     for (int i = 1 ; i <= n ; i++){
         if(check[i]==2){
