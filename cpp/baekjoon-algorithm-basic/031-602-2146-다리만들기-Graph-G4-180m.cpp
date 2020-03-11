@@ -15,13 +15,6 @@ void dfs(int r, int c, int cnt) {
         int nr = r + dr[i], nc = c + dc[i];
         if(0 <= nr && nr < n && 0 <= nc && nc < n && m[nr][nc]==0)
             dfs(r+dr[i], c+dc[i], cnt);
-    
-            // for (int i = 0 ; i < n; i++){
-            //     for (int j = 0 ; j < n; j++) {
-            //         cout << m[i][j] << " " ;
-            //     } cout << "\n";
-            // }
-            // cout << "\n";
 }
 }
 
