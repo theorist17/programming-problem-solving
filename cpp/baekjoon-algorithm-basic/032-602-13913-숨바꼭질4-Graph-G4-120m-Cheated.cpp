@@ -15,21 +15,24 @@ int main() {
     d[n] = 0;
 
     queue<vector<int> > p;
-    vector<int> v;
-    p.push(v);
+    vector<int> t;
+    t.push_back(n);
+    p.push(t);
 
     while(!q.empty()){
         int num = q.front();
         q.pop();
-        v = p.front();
-        v.push_back(num);
+        vector<int> v = p.front();
         p.pop();
-
+        cout << num << " : " ;
+        for (int i = 0 ; i < v.size(); i++)
+                cout << v[i] << " ";
+        cout << "\n";
         if (num == k) {
             cout << d[num] << "\n";
             for (int i = 0 ; i < v.size(); i++)
                 cout << v[i] << " ";
-            cout << "\n";
+            cout << num << "\n";
             return 0;
         }
 
@@ -37,16 +40,25 @@ int main() {
             d[num * 2] = d[num] + 1;
             q.push(num * 2);
             visited[num * 2] = true;
+            v.push_back(num * 2);
+            p.push(v);
+            v.pop_back();
         }
         if (num + 1 <= 100000 && !visited[num + 1]){
             d[num + 1] = d[num] + 1;
             q.push(num + 1);
             visited[num + 1] = true;
+            v.push_back(num + 1);
+            p.push(v);
+            v.pop_back();
         }
         if (0 <= num - 1 && !visited[num - 1]){
             d[num - 1] = d[num] + 1;
             q.push(num - 1);
             visited[num - 1] = true;
+            v.push_back(num - 1);
+            p.push(v);
+            v.pop_back();
         }
     }
 
