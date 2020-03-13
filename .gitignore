@@ -7,11 +7,11 @@
 # Unignore all dirs
 !*/
 
-# Ignore platform specific files
+# Ignore specific files
 .vscode/settings.json
 .DS_Store
 pps.code-workspace
 code-plus/lecture-note/algorithm-basic/*
 .vscode/c_cpp_properties.json
 tempCodeRunnerFile.cpp
-.exe
+*.exe

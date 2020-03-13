@@ -1,9 +1,11 @@
 #include<iostream>
 #include<queue>
+#include<stack>
 using namespace std;
 
 bool visited[100001];
 int d[100001];
+int from[100001];
 
 int main() {
     int n, k;
@@ -13,26 +15,22 @@ int main() {
     q.push(n);
     visited[n] = true;
     d[n] = 0;
-
-    queue<vector<int> > p;
-    vector<int> t;
-    t.push_back(n);
-    p.push(t);
+    from[n] = n;
 
     while(!q.empty()){
         int num = q.front();
         q.pop();
-        vector<int> v = p.front();
-        p.pop();
-        cout << num << " : " ;
-        for (int i = 0 ; i < v.size(); i++)
-                cout << v[i] << " ";
-        cout << "\n";
+
         if (num == k) {
             cout << d[num] << "\n";
-            for (int i = 0 ; i < v.size(); i++)
-                cout << v[i] << " ";
-            cout << num << "\n";
+            stack<int> s;
+            s.push(num);
+            while(s.top() != from[s.top()])
+                s.push(from[s.top()]);
+            while(!s.empty()){
+                cout << s.top() << " ";
+                s.pop();
+            } cout << "\n";
             return 0;
         }
 
@@ -40,25 +38,20 @@ int main() {
             d[num * 2] = d[num] + 1;
             q.push(num * 2);
             visited[num * 2] = true;
-            v.push_back(num * 2);
-            p.push(v);
-            v.pop_back();
+            from[num * 2] = num;
+
         }
         if (num + 1 <= 100000 && !visited[num + 1]){
             d[num + 1] = d[num] + 1;
             q.push(num + 1);
             visited[num + 1] = true;
-            v.push_back(num + 1);
-            p.push(v);
-            v.pop_back();
+            from[num + 1] = num;
         }
         if (0 <= num - 1 && !visited[num - 1]){
             d[num - 1] = d[num] + 1;
             q.push(num - 1);
             visited[num - 1] = true;
-            v.push_back(num - 1);
-            p.push(v);
-            v.pop_back();
+            from[num - 1] = num;
         }
     }
 
