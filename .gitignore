@@ -13,4 +13,5 @@
 pps.code-workspace
 code-plus/lecture-note/algorithm-basic/*
 .vscode/c_cpp_properties.json
-cpp/baekjoon-algorithm-basic/tempCodeRunnerFile.cpp
+tempCodeRunnerFile.cpp
+.exe
